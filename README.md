@@ -3,12 +3,17 @@
 Powershell script that attempts to shrink vhdx files.
 
 Execute the script with administrator rights.
+
 This script tries to shrink vhdx files. It defragments the file and then tries to shrink the file by the unused disk space via diskpart.
+
 The script has three phases.
-The first phase creates and runs a diskpart script to attach the vdisk.
-The second phase attach each partition and defragments the volume using the Powershell Optimize-Volume commandlet.
-The third phase creates a diskpart script to detach and shrink the disk.
+
+1. It creates and runs a diskpart script to attach the vdisk.
+2. It attach each partition and defragments the volume using the Powershell Optimize-Volume commandlet.
+3. It creates a diskpart script to detach and shrink the disk.
+
 The script works without the Powershell commandlet Optimize-VHD and don't need the Hyper-V Management Tools.
+
 The script is inspired by Johan Arwidmark https://www.deploymentresearch.com/optimizing-vhdx-files-in-a-hyper-v-lab/
 
 # MIT License
